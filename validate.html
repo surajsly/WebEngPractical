@@ -19,6 +19,10 @@
  <label>Mobile</label>
  <input type="tel" size="30" name="mobile" placeholder="mobile">
  <br />
+
+ <label>Credit Card</label>
+ <input type="text" size="30" name="credit" placeholder="Credit Card number">
+ <br />
  <input type="submit" value="Submit" onclick="validateForm()">
  <br />
  </div>
@@ -26,7 +30,7 @@
 </body>
 <script type="text/javascript">
 	const validateForm = () => {
-		const {name , email , password , mobile} = document.register;
+		const {name , email , password , mobile , credit} = document.register;
 		if(name.value==="" || email.value==="" || password.value==="" || mobile.value===""){
 			alert(`Any Field can't be Empty`);
 			return false;
@@ -38,6 +42,10 @@
   		}
   		if(!/^(\+\d{1,3}[- ]?)?\d{10}$/.test(mobile.value)){
   			alert("Invalid Mobile")
+  			return false
+  		}
+  		if(!/^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/.test(credit.value) ){
+  			alert("wrong Credit Card Number")
   			return false
   		}
   		console.log("all OK")

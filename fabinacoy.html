@@ -33,11 +33,12 @@
                 var num;
                 num = prompt("Enter the Number")
         num = parseInt(num)
+                
+                alert(num*num)
                 for(var i=1; i<=10; i++){
                     var pTag= document.getElementById('pPrint');
                     pTag.innerHTML += `${num} * ${i} =  ${(num*i)}` + "<br/>" 
                 }
-                alert(num*num)
             }
 </script>
 </html>
